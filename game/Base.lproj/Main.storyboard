@@ -1,26 +1,374 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Exp View Controller-->
+        <scene sceneID="bu7-vo-qPm">
+            <objects>
+                <viewController id="FrH-rM-aHC" customClass="ExpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eBo-5M-C7C"/>
+                        <viewControllerLayoutGuide type="bottom" id="iFX-yN-m3a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="et0-ct-ptx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weP-qt-oOa">
+                                <rect key="frame" x="12" y="119" width="288" height="411"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Eq5-rn-qOY">
+                                        <rect key="frame" x="125" y="365" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="expToTopSegue" modalTransitionStyle="crossDissolve" id="U2B-Vv-alW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smU-SX-JWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="-717"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ta4-93-ewd"/>
+                        <viewControllerLayoutGuide type="bottom" id="PbY-Kz-WYz"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IqY-N7-O7l">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9I4-1J-Qny">
+                                <rect key="frame" x="110" y="417" width="100" height="65"/>
+                                <state key="normal" image="ボタン２_01.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="start" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UYH-yu-hdb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-1y-KEL">
+                                <rect key="frame" x="181" y="490" width="100" height="58"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" image="ボタン_05.png"/>
+                                <connections>
+                                    <action selector="rule" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Z87-Lw-uvD"/>
+                                    <segue destination="FrH-rM-aHC" kind="modal" identifier="topToExpSegue" modalTransitionStyle="crossDissolve" id="L0w-gV-GUb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTQ-ME-q2s">
+                                <rect key="frame" x="41" y="490" width="100" height="58"/>
+                                <state key="normal" image="ボタン_07.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gallery" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jit-X7-F8p"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d3h-Pj-PlN">
+                                <rect key="frame" x="150" y="379" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title.png" translatesAutoresizingMaskIntoConstraints="NO" id="pNy-ub-uK4">
+                                <rect key="frame" x="12" y="64" width="296" height="79"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="ai" destination="d3h-Pj-PlN" id="kiq-bB-Yuj"/>
+                        <outlet property="galleryBtn" destination="MTQ-ME-q2s" id="hrf-L4-6If"/>
+                        <outlet property="imageView" destination="IqY-N7-O7l" id="SYf-2k-VJJ"/>
+                        <outlet property="ruleBtn" destination="DYu-1y-KEL" id="Ufw-zb-smu"/>
+                        <outlet property="startButton" destination="9I4-1J-Qny" id="B7Q-yq-uWX"/>
+                        <segue destination="6fM-nh-ctb" kind="modal" identifier="topToStage1Segue" modalTransitionStyle="flipHorizontal" id="1fI-KE-FOA"/>
+                        <segue destination="guM-lT-5fY" kind="modal" identifier="topToGallerySegue" modalTransitionStyle="crossDissolve" id="Gjy-Xy-Gra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-62" y="83"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="85h-a5-VPD">
+            <objects>
+                <viewController id="guM-lT-5fY" customClass="GalleryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yyj-Ed-ooe"/>
+                        <viewControllerLayoutGuide type="bottom" id="DXu-Mr-c26"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EWi-vZ-evV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2X-Jf-q0Y">
+                                <rect key="frame" x="0.0" y="76" width="320" height="449"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-2F-huU">
+                                        <rect key="frame" x="141" y="406" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="galleryToTopSegue" modalTransitionStyle="crossDissolve" id="Kze-CK-dmM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeR-ny-kYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144" y="937"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="01m-Di-lfV">
+            <objects>
+                <viewController id="6fM-nh-ctb" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n7D-eW-g2h"/>
+                        <viewControllerLayoutGuide type="bottom" id="7e9-r0-G7b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QW3-UC-Juw" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Gu-P4-6l4">
+                                <rect key="frame" x="40" y="476" width="60" height="72"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bBq-qd-gaE" appends="YES" id="tIo-w2-d59"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="時間" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWK-dU-5u2">
+                                <rect key="frame" x="200" y="58" width="80" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="点数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXG-WJ-szP">
+                                <rect key="frame" x="54" y="62" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv4-za-zMv">
+                                <rect key="frame" x="246" y="20" width="46" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" image="ボタン２_04.png"/>
+                                <connections>
+                                    <action selector="tapAct" destination="6fM-nh-ctb" eventType="touchUpInside" id="oOC-t1-pqe"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yX-2h-UTP">
+                                <rect key="frame" x="130" y="476" width="60" height="72"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XGy-fG-xOI" appends="YES" id="7YY-Jf-nVQ"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F83-xC-Rab">
+                                <rect key="frame" x="220" y="476" width="60" height="72"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AhI-4E-bed" appends="YES" id="uys-89-UQo"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eeT-4E-iAN"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="ansImgView1" destination="5Gu-P4-6l4" id="mOL-7C-zce"/>
+                        <outlet property="ansImgView2" destination="2yX-2h-UTP" id="Ayl-gA-fTg"/>
+                        <outlet property="ansImgView3" destination="F83-xC-Rab" id="GSY-xn-Kpg"/>
+                        <outlet property="sumLabel" destination="AXG-WJ-szP" id="MM8-fF-dvN"/>
+                        <outlet property="timeLabel" destination="yWK-dU-5u2" id="EE6-Yt-XpV"/>
+                        <segue destination="kDg-Pe-iuA" kind="modal" identifier="stage1To2Segue" id="kPq-cd-8IZ"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="stage1ToTopSegue" modalTransitionStyle="flipHorizontal" id="T5k-PS-jKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ne5-da-NdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="bBq-qd-gaE"/>
+                <swipeGestureRecognizer direction="up" id="XGy-fG-xOI"/>
+                <swipeGestureRecognizer direction="up" id="AhI-4E-bed"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="144"/>
+        </scene>
+        <!--Stage2 View Controller-->
+        <scene sceneID="VjL-2R-ueN">
+            <objects>
+                <viewController id="kDg-Pe-iuA" customClass="Stage2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xu9-17-MEd"/>
+                        <viewControllerLayoutGuide type="bottom" id="R0n-xg-rPo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kSl-Tj-kyD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEm-Tl-1CB">
+                                <rect key="frame" x="61" y="109" width="220" height="307"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seh-kf-ZNp">
+                                <rect key="frame" x="54" y="476" width="60" height="72"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-BT-6oI">
+                                <rect key="frame" x="45" y="64" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-ei-4ls">
+                                <rect key="frame" x="197" y="64" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivI-1H-xFv">
+                                <rect key="frame" x="239" y="20" width="42" height="35"/>
+                                <state key="normal" image="ボタン２_04.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapAct" destination="kDg-Pe-iuA" eventType="touchUpInside" id="stB-nO-KNX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWm-Pt-nlB">
+                                <rect key="frame" x="141" y="476" width="60" height="72"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEq-HA-LvY">
+                                <rect key="frame" x="226" y="476" width="60" height="72"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="ansImgView1" destination="seh-kf-ZNp" id="81h-Rh-4eY"/>
+                        <outlet property="ansImgView2" destination="qWm-Pt-nlB" id="qNj-JF-gVS"/>
+                        <outlet property="ansImgView3" destination="yEq-HA-LvY" id="Ft4-XQ-T9Y"/>
+                        <outlet property="sumLabel" destination="Xf2-BT-6oI" id="fXo-Av-fbM"/>
+                        <outlet property="timeLabel" destination="Fdg-ei-4ls" id="IQy-Aw-FHh"/>
+                        <segue destination="sac-Xi-Ivt" kind="modal" identifier="stage2ToResultSegue" modalTransitionStyle="flipHorizontal" id="zVN-oJ-DS0"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="stage2ToTopSegue" modalTransitionStyle="flipHorizontal" id="fwq-m6-5K4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8AC-Cw-s0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="157"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="IWP-pd-h65">
+            <objects>
+                <viewController id="sac-Xi-Ivt" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qFH-Yy-A1r"/>
+                        <viewControllerLayoutGuide type="bottom" id="ICZ-RV-Eli"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1jY-9p-2Q9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="result.png" translatesAutoresizingMaskIntoConstraints="NO" id="rwh-Yj-vtF">
+                                <rect key="frame" x="10" y="40" width="300" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccU-0K-Htn">
+                                <rect key="frame" x="184" y="483" width="100" height="58"/>
+                                <state key="normal" image="ボタン_03.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapTop" destination="sac-Xi-Ivt" eventType="touchUpInside" id="gOC-HO-leM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0e-jl-Ls4">
+                                <rect key="frame" x="85" y="378" width="55" height="55"/>
+                                <state key="normal" title="Button" image="facebook.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapfb" destination="sac-Xi-Ivt" eventType="touchUpInside" id="Pvy-L2-NKo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEW-Jv-kp6">
+                                <rect key="frame" x="179" y="378" width="60" height="60"/>
+                                <state key="normal" title="Button" image="twitter-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="taptw" destination="sac-Xi-Ivt" eventType="touchUpInside" id="8dC-QF-YrP"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-Bt-VMC">
+                                <rect key="frame" x="77" y="252" width="71" height="90"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-IN-mwh">
+                                <rect key="frame" x="48" y="483" width="100" height="58"/>
+                                <state key="normal" image="ボタン_07.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapGal" destination="sac-Xi-Ivt" eventType="touchUpInside" id="Q4o-5C-LQl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMP-e5-6G2">
+                                <rect key="frame" x="72" y="176" width="176" height="53"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEK-Pv-ubf">
+                                <rect key="frame" x="179" y="252" width="71" height="90"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="facebook" destination="Q0e-jl-Ls4" id="dHq-GQ-XZf"/>
+                        <outlet property="gallery" destination="0ZT-IN-mwh" id="3gk-aB-SCJ"/>
+                        <outlet property="imgView" destination="hlV-Bt-VMC" id="r06-C3-yKf"/>
+                        <outlet property="imgView2" destination="bEK-Pv-ubf" id="Ffj-xJ-rwA"/>
+                        <outlet property="resultLabel" destination="tMP-e5-6G2" id="t8E-h7-1p3"/>
+                        <outlet property="top" destination="ccU-0K-Htn" id="KKu-wn-f3Z"/>
+                        <outlet property="twitter" destination="XEW-Jv-kp6" id="1N6-P9-YtV"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="resultToTopSegue" modalTransitionStyle="flipHorizontal" id="EzT-Eb-ggi"/>
+                        <segue destination="guM-lT-5fY" kind="modal" identifier="resultToGallerySegue" modalTransitionStyle="flipHorizontal" id="0nW-P1-3pG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESt-6p-06H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1523" y="164"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebook.png" width="1024" height="1024"/>
+        <image name="result.png" width="1630" height="500"/>
+        <image name="title.png" width="1574" height="298"/>
+        <image name="twitter-icon.png" width="512" height="512"/>
+        <image name="ボタン_03.png" width="100" height="60"/>
+        <image name="ボタン_05.png" width="100" height="58"/>
+        <image name="ボタン_07.png" width="100" height="58"/>
+        <image name="ボタン２_01.png" width="100" height="65"/>
+        <image name="ボタン２_04.png" width="52" height="47"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="0nW-P1-3pG"/>
+        <segue reference="T5k-PS-jKd"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
 </document>

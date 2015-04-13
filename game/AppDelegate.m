@@ -7,15 +7,42 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+//    // Override point for customization after application launch.
+    UIStoryboard *storyboard; // StoryBoardの型宣言
+    NSString *storyBoardName; // StoryBoardの名称設定用
+
+    //４インチの画面サイズ判定
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    if(screenSize.width == 320.0 && screenSize.height == 568.0){
+        //4インチの場合
+        storyBoardName = @"Main";
+    }else{
+        //3.5インチの場合
+        storyBoardName= @"Storyboard2";
+    }
+    
+    // StoryBoardのインスタンス化
+    storyboard = [UIStoryboard storyboardWithName:storyBoardName bundle:nil];
+    // 画面の生成
+    UIViewController *mainViewController = [storyboard instantiateInitialViewController];
+    // ルートウィンドウにひっつける
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = mainViewController;
+    [self.window makeKeyAndVisible];
+
+    [Fabric with:@[CrashlyticsKit]];
+    
     return YES;
 }
-							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
